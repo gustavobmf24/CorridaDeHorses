@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <title>Turfe Valley</title>
+</head>
+
+<body>
+    <!-- <audio id="inicio" loop>
+        <source src="audio_inicio.mp3" type="audio/mpeg">
+    </audio> -->
+    
+    <!-- <audio id="largada">
+        <source src="pipipi.mp3" type="audio/mpeg">
+    </audio>  -->
+    <div id="tela_inicio">
+        <div id="campos_inicio">
+            <h1>FireHorse GP</h1>
+            <button onclick="iniciar()">Iniciar a Galopada</button>
+        </div>
+        <div id="quest">
+            <div id="campos_quest">
+                Quantidade de Cavalos: <input type="number" id="ipt_qtd" class="ipts"> <br>
+                Quantidade de Voltas: <input type="number" id="ipt_voltas" class="ipts"><br>
+                <button class="btns" onclick="validar()">Prosseguir</button>
+            </div>
+        </div>
+        <div id="nomeCavalos">
+            <div class="space">
+                <div id="campo_nomes">
+                    Nome das cavalaria:
+                    <input type="text" id="ipt_cavalo" class="ipts"></input>
+                    <button class="btns" id="btnCadastro" onclick="cadastrarCavalo()">Adicionar</button>
+                </div>
+                <div id="campo_cavalos">
+                    <div id="cavalos"></div>
+                    <div id="nomes"></div>
+                </div>
+            </div>
+            <p id="aguardeMsg">aguarde...</p>
+        </div>
+    </div>
+    <div id="div_corrida">
+        <div id="div_msg"></div>
+        <div id="cavalos_correndo">
+        </div>
+        <div id="div_historico"></div>
+        <button id="btnPodio" onclick="exibirPodio()">Exibir pódio</button>
+    </div>
+    <div id="div_podio">
+        <div id="div_ranking">
+            <img id="confete" src="img/confete.gif" alt="">
+            <div id="topUm">
+
+                <div class="infoPodium" id="nomeUm">
+                    <h2>-</h2>
+                </div>
+                <div class="infoPodium" id="tempoUm">-</div>
+                <div class="infoPodium"><img id="medalhaPrimeiro" src="img/first.png" alt=""></div>
+            </div>
+            <div id="topDois">
+
+                <div class="infoPodium" id="nomeDois">
+                    <h2>-</h2>
+                </div>
+                <div class="infoPodium" id="tempoDois">-</div>
+                <div class="infoPodium"><img id="medalhaSegundo" src="img/second.png" alt=""></div>
+            </div>
+            <div id="topTres">
+
+                <div class="infoPodium" id="nomeTres">
+                    <h2>-</h2>
+                </div>
+                <div class="infoPodium" id="tempoTres">-</div>
+                <div class="infoPodium"><img id="medalhaTerceiro" src="img/third.png" alt=""></div>
+            </div>
+            <img id="cvlUm" src="img/topum.png">
+            <img id="cvlDois" src="img/topDois.png">
+            <img id="cvlTres" src="img/topTres.png">
+        </div>
+        <div>
+            <button id="btnReiniciar" onclick="reiniciar()">Reiniciar</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    const trilhaSonora = new Audio("");
+    document.body.addEventListener("mousemove", function () {
+        trilhaSonora.play().catch((erro) => { });
+        // trilhaSonora.volume = 0.3;
+    })
+    const largada = new Audio("")
+    largada.volume = 0.5
+
+    const palmas = new Audio("")
+
+
+    var vt_cavalos = [];
+    var qtdCavalos = 0;
+    var ax_voltas = 0;
+    var vt_lideres = [];
+    var frases = ['A corrida vai começar em', '3', '2', '1', 'Começou!']
+</script>
